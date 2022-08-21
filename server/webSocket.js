@@ -1,6 +1,6 @@
 // импортируем пакет "ws"
 const ws = require('ws');
-
+//todo
 // const {Sequelize} = require("sequelize");
 // const Seq = new Sequelize()
 
