@@ -4,8 +4,3 @@ create Table person
     name VARCHAR(255)
 )
 
-create Table massage
-(
-    id    SERIAL PRIMARY KEY,
-    title VARCHAR(255)
-)

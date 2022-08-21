@@ -1,6 +1,9 @@
 // импортируем пакет "ws"
 const ws = require('ws');
 
+// const {Sequelize} = require("sequelize");
+// const Seq = new Sequelize()
+
 const wss = new ws.Server({ // Создаём webSocket сервер
     port: 9000, // параметром передаём объект порта
 }, () => console.log(`Server started on 9000`))
@@ -14,6 +17,7 @@ const wss = new ws.Server({ // Создаём webSocket сервер
 wss.on('connection', function connection(ws) {
     ws.on('message', function (message) { // вещаем слушатель события message и вторым параметром передаём callBack
         message = JSON.parse(message) // парсим строку в json объект
+       // Seq.col('massage')
         /**
          делаем switch-case который будет отрабатывать по разному в зависимости от event который мы передали
          в сообщении
@@ -29,10 +33,11 @@ wss.on('connection', function connection(ws) {
     })
 })
 
+
 /**
  функция отправляет сообщение всем подключённым на данный момент пользователям
  */
-function broadcastMessage(message, id) {
+function broadcastMessage(message) {
     /**
      обращемся к webSocket серверу у которого есть поле clients (это и есть все пользователи у которых
      установленно подключение) и с помощью forEach итерируемся по коллекции клиентов и выполняем отправления сообщений
