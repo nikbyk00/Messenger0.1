@@ -29,12 +29,14 @@ const EventSourcing = () => {
      * функция отправки сообщений
      */
     const sendMessage = async () => {
+        setValue('')
         await axios.post('http://localhost:9000/new-messages', {
             chatId,
             username,
             message: value,
             id: Date.now(),
         })
+
     }
 
     if (!connected) {
