@@ -5,7 +5,7 @@
 }
 
 .box {
-    width: 210vh;
+    width: 204vh;
     background: url("https://pixelbox.ru/wp-content/uploads/2021/09/background-chat-vk-1.png");
     height: 100vh;
     background-size: cover;
@@ -13,7 +13,7 @@
 
 .center {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
     margin-top: 30px;
 
