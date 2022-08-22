@@ -1,12 +1,12 @@
 import React, {useRef, useState} from 'react';
 
-
 const WebSock = () => {
     const [messages, setMessages] = useState([]);
     const [value, setValue] = useState('');
     const socket = useRef() // создаём reference
     const [connected, setConnected] = useState(false); // состояние которое будет отображать подключение
     const [username, setUsername] = useState('') // имя пользователя
+
 
     function connect() {
         socket.current = new WebSocket('ws://localhost:9000') // в поле current создаём объект сокета
@@ -53,7 +53,10 @@ const WebSock = () => {
             id: Date.now(),
             event: 'message'
         }
+
+
         socket.current.send(JSON.stringify(message));
+
         setValue('')
     }
 
