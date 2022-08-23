@@ -12,9 +12,6 @@ const EventSourcing = () => {
         subscribe()
     }, [])
 
-    function connect() {
-        setConnected(true)
-    }
 
     // получение сообщения
     const subscribe = async () => {
@@ -23,6 +20,10 @@ const EventSourcing = () => {
             const message = JSON.parse(event.data);
             setMessages(prev => [message, ...prev]);
         }
+    }
+
+    function connect() {
+        setConnected(true)
     }
 
     /**
